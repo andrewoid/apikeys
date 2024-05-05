@@ -4,7 +4,19 @@ plugins {
 }
 
 group = 'com.andrewoid'
-version = '0.1-SNAPSHOT'
+version = '0.1'
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = group
+            artifactId = 'apikeys'
+            version = version
+
+            from components.java
+        }
+    }
+}
 
 repositories {
     mavenCentral()

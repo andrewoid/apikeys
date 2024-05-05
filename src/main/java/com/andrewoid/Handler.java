@@ -1,4 +1,4 @@
-package andrewoid;
+package com.andrewoid;
 
 import org.jetbrains.annotations.Nullable;
 

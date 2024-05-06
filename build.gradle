@@ -14,7 +14,7 @@ mavenPublishing {
 
     configure(new JavaLibrary(new JavadocJar.Javadoc(), true))
 
-    publishToMavenCentral(SonatypeHost.S01)
+    publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
 
     coordinates(group, "apikeys", version)
 

@@ -1,33 +1,50 @@
 plugins {
-    id 'java'
-    id "maven-publish"
-    id 'signing'
+    id 'java-library'
+    id "com.vanniktech.maven.publish" version "0.28.0"
 }
 
 group = 'com.andrewoid'
 version = '0.1'
 
-publishing {
-    publications {
-        maven(MavenPublication) {
-            groupId = group
-            artifactId = 'apikeys'
-            version = version
+import com.vanniktech.maven.publish.SonatypeHost
+import com.vanniktech.maven.publish.JavaLibrary
+import com.vanniktech.maven.publish.JavadocJar
 
-            from components.java
+mavenPublishing {
+
+    configure(new JavaLibrary(new JavadocJar.Javadoc(), true))
+
+    publishToMavenCentral(SonatypeHost.S01)
+
+    coordinates(group, "apikeys", version)
+
+    pom {
+        name = "APiKeys"
+        description = "A library for handling Api Keys locally and in GitHub Actions"
+        inceptionYear = "2024"
+        url = "https://github.com/andrewoid/apikeys"
+        licenses {
+            license {
+                name = "The Apache License, Version 2.0"
+                url = "http://www.apache.org/licenses/LICENSE-2.0.txt"
+                distribution = "http://www.apache.org/licenses/LICENSE-2.0.txt"
+            }
+        }
+        developers {
+            developer {
+                id = "andrewoid"
+                name = "Andrew Schwimmer"
+                url = "https://github.com/andrewoid/"
+            }
+        }
+        scm {
+            url = "https://github.com/andrewoid/apikeys/"
+            connection = "scm:git:git://github.com/andrewoid/apikeys.git"
+            developerConnection = "scm:git:ssh://git@github.com/andrewoid/apikeys.git"
         }
     }
-    repositories {
-        maven {
-            name = 'MavenCentral'
-            url = 'https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/'
-            credentials(PasswordCredentials)
-        }
-    }
-    signing {
-        useGpgCmd()
-        sign publishing.publications
-    }
+
+    signAllPublications()
 }
 
 repositories {

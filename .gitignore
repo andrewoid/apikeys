@@ -46,3 +46,4 @@ bin/
 .DS_STORE
 
 **/apikey.properties
+gradle.properties

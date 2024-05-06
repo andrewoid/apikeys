@@ -1,6 +1,7 @@
 plugins {
     id 'java'
-    id 'maven-publish'
+    id "com.vanniktech.maven.publish" version "0.28.0"
+    id 'signing'
 }
 
 group = 'com.andrewoid'
@@ -15,6 +16,17 @@ publishing {
 
             from components.java
         }
+    }
+    repositories {
+        maven {
+            name = 'MavenCentral'
+            url = 'https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/'
+            credentials(PasswordCredentials)
+        }
+    }
+    signing {
+        useGpgCmd()
+        sign publishing.publications
     }
 }
 

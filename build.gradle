@@ -1,9 +1,51 @@
 plugins {
-    id 'java'
+    id 'java-library'
+    id "com.vanniktech.maven.publish" version "0.28.0"
 }
 
-group = 'andrewoid'
-version = '0.1-SNAPSHOT'
+group = 'com.andrewoid'
+version = '0.1'
+
+import com.vanniktech.maven.publish.SonatypeHost
+import com.vanniktech.maven.publish.JavaLibrary
+import com.vanniktech.maven.publish.JavadocJar
+
+mavenPublishing {
+
+    configure(new JavaLibrary(new JavadocJar.Javadoc(), true))
+
+    publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
+
+    coordinates(group, "apikeys", version)
+
+    pom {
+        name = "APiKeys"
+        description = "A library for handling Api Keys locally and in GitHub Actions"
+        inceptionYear = "2024"
+        url = "https://github.com/andrewoid/apikeys"
+        licenses {
+            license {
+                name = "The Apache License, Version 2.0"
+                url = "http://www.apache.org/licenses/LICENSE-2.0.txt"
+                distribution = "http://www.apache.org/licenses/LICENSE-2.0.txt"
+            }
+        }
+        developers {
+            developer {
+                id = "andrewoid"
+                name = "Andrew Schwimmer"
+                url = "https://github.com/andrewoid/"
+            }
+        }
+        scm {
+            url = "https://github.com/andrewoid/apikeys/"
+            connection = "scm:git:git://github.com/andrewoid/apikeys.git"
+            developerConnection = "scm:git:ssh://git@github.com/andrewoid/apikeys.git"
+        }
+    }
+
+    signAllPublications()
+}
 
 repositories {
     mavenCentral()

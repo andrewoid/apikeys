@@ -2,13 +2,14 @@
 
 This library simplifies retrieval of api keys when stored locally and on GitHub.
 
-
 ### Dependency
+
 ``` groovy
-implementation 'andrewoid:apikeys:0.1'
+implementation 'com.andrewoid:apikeys:0.2'
 ```
 
-### Usage 
+### Usage
+
 ```java
 ApiKey apiKey = new ApiKey();
 String keyString = apiKey.get();
@@ -32,8 +33,13 @@ apikey=ApiKeyGivenToYouByTheApiWhenYouSignUp
 
 1. Open your Repository on GitHub and go to `Settings`
 2. On the left side there's a tab for `Environment`. Add a new Environment called "prod".
+
+![add environment github](images/add_environment.png)
+
 3. In `Secrets and Variables` add a new Environment Secret called `APIKEY`. The value should be the API key that was
    given to you by the service.
+
+![add secret github](images/add_secret.png)
 
 ### Accessing API Keys with GitHub Actions
 

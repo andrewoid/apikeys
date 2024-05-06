@@ -7,12 +7,12 @@ public class ApiKey {
     private final String key;
 
     public ApiKey() {
-        Handler[] handlers = new Handler[] {
+        Handler[] handlers = new Handler[]{
                 new PropertiesHandler(APIKEY_PROPERTIES, APIKEY),
                 new EnvironmentHandler(APIKEY)
         };
         String s = null;
-        for ( Handler h : handlers ) {
+        for (Handler h : handlers) {
             s = h.locate();
             if (s != null) {
                 break;
@@ -32,8 +32,6 @@ public class ApiKey {
 
     @Override
     public String toString() {
-        return "ApiKey{" +
-                "key='" + key + '\'' +
-                '}';
+        return "ApiKey{" + "key='" + key + '\'' + '}';
     }
 }

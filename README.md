@@ -32,20 +32,13 @@ apikey=ApiKeyGivenToYouByTheApiWhenYouSignUp
 ### Storing API Keys on GitHub
 
 1. Open your Repository on GitHub and go to `Settings`
-2. On the left side there's a tab for `Environment`. Add a new Environment called "prod".
 
-![add environment github](images/add_environment.png)
-
-3. In `Secrets and Variables` add a new Environment Secret called `APIKEY`. The value should be the API key that was
+2. In `Secrets and Variables` add a new Repository Secret called `APIKEY`. The value should be the API key that was
    given to you by the service.
 
 ![add secret github](images/add_secret.png)
 
 ### Accessing API Keys with GitHub Actions
-
-In your `yaml` file, add the environment to your jobs.
-
-![add prod environment](images/add_prod.png)
 
 Pass the API key as an environment variable to your build.
 

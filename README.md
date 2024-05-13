@@ -40,7 +40,7 @@ apikey=ApiKeyGivenToYouByTheApiWhenYouSignUp
 
 ### Accessing API Keys with GitHub Actions
 
-Pass the API key as an environment variable to your build.
+Pass the API key as an environment variable to your `.yaml` file as shown below.
 
 ![pass api key as an environment variable](images/add_key.png)
 

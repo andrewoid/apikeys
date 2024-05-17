@@ -1,4 +1,4 @@
-package com.andrewoid;
+package com.andrewoid.apikeys;
 
 import org.jetbrains.annotations.Nullable;
 

@@ -1,4 +1,4 @@
-package com.andrewoid;
+package com.andrewoid.apikeys;
 
 public class ApiKey {
 

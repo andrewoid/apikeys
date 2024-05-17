@@ -42,6 +42,11 @@ apikey=ApiKeyGivenToYouByTheApiWhenYouSignUp
 
 Pass the API key as an environment variable to your `.yaml` file as shown below.
 
+``` yaml
+env:
+    apikey: ${{ secrets.APIKEY }}
+```
+
 ![pass api key as an environment variable](images/add_key.png)
 
 

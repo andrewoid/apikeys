@@ -20,8 +20,8 @@ public class ApiKey {
     /**
      * Loads the API key from the Properties file at the specified location and specified keyName
      *
-     * @param location
-     * @param keyName
+     * @param location the location of the Properties file within the Jar File
+     * @param keyName  the key in the Properties file or the name of the environment variable.
      */
     public ApiKey(String location, String keyName) {
         Handler[] handlers = new Handler[]{

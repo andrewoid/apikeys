@@ -5,7 +5,7 @@ This library simplifies retrieval of api keys when stored locally and on GitHub.
 ### Dependency
 
 ``` groovy
-implementation 'com.andrewoid:apikeys:0.2'
+implementation 'com.andrewoid:apikeys:0.3'
 ```
 
 ### Usage

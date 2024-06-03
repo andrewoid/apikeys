@@ -46,10 +46,12 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - name: Build (and test) with Gradle
+        env:
+          apikey: ${{ secrets.APIKEY }}
         run: ./gradlew build
       - name: Publish Test Report
         uses: mikepenz/action-junit-report@v4
         if: success() || failure() # always run even if the previous step fails
         with:
-            report_paths: '**/build/test-results/test/TEST-*.xml'
-            detailed_summary: true
+          report_paths: '**/build/test-results/test/TEST-*.xml'
+          detailed_summary: true

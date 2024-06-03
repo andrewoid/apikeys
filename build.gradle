@@ -4,11 +4,11 @@ plugins {
 }
 
 group = 'com.andrewoid'
-version = '0.2'
+version = '0.3'
 
-import com.vanniktech.maven.publish.SonatypeHost
 import com.vanniktech.maven.publish.JavaLibrary
 import com.vanniktech.maven.publish.JavadocJar
+import com.vanniktech.maven.publish.SonatypeHost
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8
@@ -28,10 +28,6 @@ mavenPublishing {
         description = "A library for handling Api Keys locally and in GitHub Actions"
         inceptionYear = "2024"
         url = "https://github.com/andrewoid/apikeys"
-//        properties {
-//            maven.compiler.source = sourceCompatibility
-//            maven.compiler.target = targetCompatibility
-//        }
         licenses {
             license {
                 name = "The Apache License, Version 2.0"

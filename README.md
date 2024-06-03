@@ -5,7 +5,7 @@ This library simplifies retrieval of api keys when stored locally and on GitHub.
 ### Dependency
 
 ``` groovy
-implementation 'com.andrewoid:apikeys:0.2'
+implementation 'com.andrewoid:apikeys:0.3'
 ```
 
 ### Usage
@@ -41,6 +41,11 @@ apikey=ApiKeyGivenToYouByTheApiWhenYouSignUp
 ### Accessing API Keys with GitHub Actions
 
 Pass the API key as an environment variable to your `.yaml` file as shown below.
+
+``` yaml
+env:
+    apikey: ${{ secrets.APIKEY }}
+```
 
 ![pass api key as an environment variable](images/add_key.png)
 

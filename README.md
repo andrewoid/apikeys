@@ -5,7 +5,7 @@ This library simplifies retrieval of api keys when stored locally and on GitHub.
 ### Dependency
 
 ``` groovy
-implementation 'com.andrewoid:apikeys:0.3'
+implementation 'com.andrewoid:apikeys:0.4'
 ```
 
 ### Usage
@@ -48,6 +48,27 @@ env:
 ```
 
 ![pass api key as an environment variable](images/add_key.png)
+
+### Accessing more than one API Key
+
+If your application needs more than one API Key you can name it something specific in your `apikey.properties`.
+
+```
+apikey1=ApiKeyGivenToYouByTheApiWhenYouSignUp
+apikey2=SecondApiKeyGivenToYouByTheOtherApi
+```
+
+You can retrieve them by
+
+```java
+ApiKey apiKey1 = new ApiKey("apikey1");
+String keyString1 = apiKey1.get();
+
+ApiKey apiKey2 = new ApiKey("apikey2");
+String keyString2 = apiKey2.get();
+```
+
+You will need to add **two** secrets to GitHub with **two** entries in your `.yaml` file
 
 
 

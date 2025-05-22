@@ -43,6 +43,15 @@ public class ApiKey {
         key = s;
     }
 
+    /**
+     * Loads the API key from the Properties file at the default location and specified keyName
+     *
+     * @param keyName the key in the Properties file or the name of the environment variable.
+     */
+    public ApiKey(String keyName) {
+        this(DEFAULT_LOCATION, keyName);
+    }
+
     public String get() {
         return key;
     }
